@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2024-07-07-create-table-employees
+      author: Legend
+      changes:
+        - createTable:
+            catalogName: test
+            columns:
+              - column:
+                  name: employee_id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: first_name
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+            schemaName: public
+            tableName: employees

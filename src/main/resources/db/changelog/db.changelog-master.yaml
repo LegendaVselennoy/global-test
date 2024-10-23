@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/v.1.0.0/2024-07-07--01-init-schema.yaml
+  - include:
+      file: db/changelog/v.1.0.0/2024-07-07--01-init-employees-schema.yaml

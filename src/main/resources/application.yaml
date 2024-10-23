@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: test-case
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/global}
+    username: ${DB_LOGIN:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        hbm2ddl:
+          auto: validate
+  liquibase:
+    user: ${DB_LOGIN:postgres}
+    password: ${DB_PASSWORD:postgres}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/test}
+    contexts: dev
+  devtools:
+    restart:
+      enabled: false
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health , prometheus
+
+logging:
+  level:
+    root: WARN
